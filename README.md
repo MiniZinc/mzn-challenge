@@ -35,3 +35,11 @@ The following table shows the version of the MiniZinc compiler used to compile t
 | 2010 | 1.1              |
 | 2009 | 1.0              |
 | 2008 | 0.8              |
+
+### Licensing
+
+A `LICENSE` files is provided in each specific problem directory when the license is known.
+Problems submitted to recent iterations of the challenge are required to be available under an *MIT license*.
+However, this was not the case for earlier iterations.
+As such, other models might be available under a different license or no license might be available.
+We welcome authors to contact us to update any licensing details.
