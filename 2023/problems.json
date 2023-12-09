@@ -1,0 +1,188 @@
+{
+  "chessboard": {
+    "globals": [
+      "global_cardinality",
+      "lex_lesseq"
+    ],
+    "kind": "max",
+    "sbc": true,
+    "rc": true
+  },
+  "code-generator": {
+    "globals": [
+      "all_different",
+      "cumulative",
+      "decreasing",
+      "diffn",
+      "diffn_nonstrict",
+      "maximum",
+      "member",
+      "minimum",
+      "table",
+      "value_precede_chain"
+    ],
+    "kind": "min",
+    "sbc": true,
+    "rc": true
+  },
+  "elitserien": {
+    "globals": [
+      "all_different",
+      "global_cardinality_closed",
+      "inverse",
+      "member",
+      "regular"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "evm-super-compilation": {
+    "globals": [
+      "global_cardinality_low_up"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": true
+  },
+  "gametes": {
+    "globals": [
+      "all_different_except_0",
+      "count",
+      "count_geq",
+      "increasing"
+    ],
+    "kind": "min",
+    "sbc": true,
+    "rc": false
+  },
+  "kidney-exchange": {
+    "globals": [
+      "all_different",
+      "bin_packing",
+      "seq_precede_chain"
+    ],
+    "kind": "max",
+    "sbc": true,
+    "rc": false
+  },
+  "mrcpsp": {
+    "globals": [
+      "cumulative"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": true
+  },
+  "multi-agent-graph-coverage": {
+    "globals": [
+      "all_different"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "pennies-opt": {
+    "globals": [
+      "all_different",
+      "decreasing"
+    ],
+    "kind": "max",
+    "sbc": true,
+    "rc": false
+  },
+  "roster": {
+    "globals": [
+      "at_least",
+      "at_most",
+      "exactly"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "roster-shifts-bool": {
+    "globals": [],
+    "kind": "max",
+    "sbc": true,
+    "rc": false
+  },
+  "speck-optimisation": {
+    "globals": [
+      "all_equal"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "sudoku_fixed": {
+    "globals": [
+      "all_different"
+    ],
+    "kind": "sat",
+    "sbc": false,
+    "rc": false
+  },
+  "table-layout": {
+    "globals": [],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "test-scheduling": {
+    "globals": [
+      "cumulative",
+      "disjunctive",
+      "value_precede_chain"
+    ],
+    "kind": "min",
+    "sbc": true,
+    "rc": true
+  },
+  "travelling-thief": {
+    "globals": [
+      "all_different",
+      "inverse"
+    ],
+    "kind": "max",
+    "sbc": false,
+    "rc": false
+  },
+  "unit-commitment": {
+    "globals": [],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  },
+  "valve-network": {
+    "globals": [],
+    "kind": "max",
+    "sbc": false,
+    "rc": false
+  },
+  "vrplc": {
+    "globals": [
+      "circuit",
+      "cumulative"
+    ],
+    "kind": "min",
+    "sbc": true,
+    "rc": false
+  },
+  "yumi-static": {
+    "globals": [
+      "all_equal",
+      "all_different",
+      "circuit",
+      "cumulative",
+      "diffn",
+      "increasing",
+      "table",
+      "value_precede",
+      "value_precede_chain"
+    ],
+    "kind": "min",
+    "sbc": false,
+    "rc": false
+  }
+}
