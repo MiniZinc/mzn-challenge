@@ -89,11 +89,11 @@ int: BSize = TourLength + 1;
 % in the order of visits.
 % Each truck can visit any location.
 %
-array[1..ASize] of var 1..TSize: TourALoc :: is_output;
+array[1..ASize] of var 1..TSize: TourALoc :: output_var;
 
 % The tour for truck B.
 %
-array[1..BSize] of var 1..TSize: TourBLoc :: is_output ;
+array[1..BSize] of var 1..TSize: TourBLoc :: output_var ;
 
 % Set the complete distance table (see the .dzn files for actua numbers).
 %
@@ -111,13 +111,13 @@ array[1..BSize] of var 0..MaxLeg: BLegDist ;
 % Represent the optimisation expression as a variable so as to 
 % get proper output from lazy MiniZinc.
 %
-var 0..MaxTotDist: ADist :: is_output;
-var 0..MaxTotDist: BDist :: is_output;
+var 0..MaxTotDist: ADist :: output_var;
+var 0..MaxTotDist: BDist :: output_var;
 
 % This was originally MaxDist, but the MiniZinc challenge rule
 % require the objective to be called objective.
 %
-var 0..MaxTotDist: objective :: is_output; 
+var 0..MaxTotDist: objective :: output_var; 
 
 %----------------------------------------------------------------------------%
 

@@ -50,7 +50,7 @@ constraint
         Demand[i] <= u[i]
     );
 
-var int: objective :: is_output =
+var int: objective :: output_var =
     sum( i in 0..N, j in 0..N ) (Distance[i+1, j+1] * x[i, j]); 
 
 solve 

@@ -15,7 +15,7 @@ array [1..2,1..2,1..2] of 0..1: nonadd = array3d(1..2,1..2,1..2,
      1, 0, 0, 1]);
 
 % variables
-array [1..Y,1..X] of var 1..2: A :: is_output;
+array [1..Y,1..X] of var 1..2: A :: output_var;
 
 % All variables in a region must be different
 % Ordering to ensure each variable is handled exactly once
@@ -51,4 +51,4 @@ constraint forall(i in 1..X) (
     nonogram_col(A, [ cols[i,j] | j in 1..maxlen where cols[i,j] >= 0], i)
     );
 
-solve :: int_search(array1d(1..X*Y,A),input_order,indomain_max,complete) satisfy;
+solve :: int_search(array1d(1..X*Y,A),input_order,indomain_max) satisfy;

@@ -71,7 +71,7 @@ constraint
 % Objective.
 %
 solve
-   :: int_search( s, "smallest", "indomain_min", "complete" )
+   :: int_search( s, smallest, indomain_min )
    minimize end;
 
 output [

@@ -50,12 +50,12 @@ int:Joker=5;
 var 0..flatsize: evemorn ;
 var 0..flatsize: isolated ;
 
-var 0..2*flatsize: objective :: is_output = evemorn+isolated ;
+var 0..2*flatsize: objective :: output_var = evemorn+isolated ;
 
 % The roster is an array of decision variables:
 % each variable has domain 1..5 representing possible shifts Rest,Morn,Day,Eve or Joker
 % roster is a two-dimensional array with a row for each week
-array [1..weeks,1..7] of var 1..5: roster :: is_output ;
+array [1..weeks,1..7] of var 1..5: roster :: output_var ;
 % flatroster is a one-dimensional array, which will contain exactly the same set of variables
 array [1..flatsize] of var 1..5: flatroster ;
 

@@ -36,7 +36,7 @@ constraint
       regular(board,q,s,d,1,f)
   );
 
-solve ::int_search(board,"input_order","indomain_min","complete") satisfy;
+solve ::int_search(board, input_order, indomain_min) satisfy;
 
 output [ if w = 1 then "\n% " else "" endif ++ show(board[(h-1)*width+w])
        | h in 1..height, w in 1..width-1

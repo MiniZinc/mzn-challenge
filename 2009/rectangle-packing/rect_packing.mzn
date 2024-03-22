@@ -59,16 +59,16 @@ int: min_width  = ceil(  sqrt( int2float( min_area ) ) );
 %
 
     % X-coordinate of the square's origin (left lower corner)
-array [ Squares ] of var 0..max_width : X :: is_output;
+array [ Squares ] of var 0..max_width : X :: output_var;
     % Y-coordinate of the square's origin (left lower corner)
-array [ Squares ] of var 0..max_height: Y :: is_output;
+array [ Squares ] of var 0..max_height: Y :: output_var;
     
     % The width  of the rectangle
-var min_width ..max_width : Width  :: is_output;
+var min_width ..max_width : Width  :: output_var;
     % The height of the rectangle
-var min_height..max_height: Height :: is_output;
+var min_height..max_height: Height :: output_var;
     % The area   of the rectangle
-var min_area  ..max_area  : Area   :: is_output;
+var min_area  ..max_area  : Area   :: output_var;
 
 %-----------------------------------------------------------------------------%
 % Predicates.

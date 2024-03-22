@@ -4,8 +4,8 @@ int: k; %% number of times round the loop
 int: n; %% number of iterations of change per loop 
 int: m; %% m^2 propagators per change of loop 
  
-array [0..n] of var 0..k*n : y :: is_output;
-array [0..m] of var 0..k*n : x :: is_output;
+array [0..n] of var 0..k*n : y :: output_var;
+array [0..m] of var 0..k*n : x :: output_var;
 
 constraint
     forall(i in 2..n)(

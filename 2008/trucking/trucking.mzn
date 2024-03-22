@@ -43,7 +43,7 @@ constraint
         sum(t in tau..tau+1)( x[Truck2, t] ) <= 1
     );
 
-solve :: int_search( [ x[i,t] | i in 1..N, t in 1..T ], "smallest", "indomain_min", "complete")
+solve :: int_search( [ x[i,t] | i in 1..N, t in 1..T ], smallest, indomain_min)
 minimize total_cost;
 
 var int: total_cost;

@@ -25,7 +25,7 @@ constraint
 		number_of_v(s, s[i], i-1)
 	);
 
-solve :: int_search(s, "input_order", "indomain_min", "complete")
+solve :: int_search(s, input_order, indomain_min)
 	satisfy;
 
 output

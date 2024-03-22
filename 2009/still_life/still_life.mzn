@@ -33,9 +33,9 @@ int: n;
     %   is 1 on the edges and 2 in the interior, not 0, but I haven't
     %   proved this.
     %
-array [1..n, 1..n] of var 0..1: a :: is_output;
+array [1..n, 1..n] of var 0..1: a :: output_var;
 array [1..n, 1..n] of var 0..6: s;
-var int: objective :: is_output = sum (r, c in 1..n) (a[r, c]); % Total.
+var int: objective :: output_var = sum (r, c in 1..n) (a[r, c]); % Total.
 
     % Compute the sum of live neighbours for each cell.
     %

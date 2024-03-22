@@ -80,7 +80,7 @@ array[1..17, 1..3] of int: layout;
 %------------------------------------------------------------------------%
 
 % Card at position
-array[1..52] of var 1..52: x :: is_output;
+array[1..52] of var 1..52: x :: output_var;
 % Position of card
 array[1..52] of var 1..52: y;
 
@@ -117,8 +117,7 @@ constraint
 
 solve :: int_search(x,
       	            input_order, 
-		    indomain_min, 
-		    complete) 
+		    indomain_min) 
 satisfy;
 
 

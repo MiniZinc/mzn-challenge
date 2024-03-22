@@ -33,7 +33,7 @@ constraint
 constraint x[1] != x[n*k+1];
 
 solve ::
-      int_search(x, "first_fail", "indomain_min", "complete")
+      int_search(x, first_fail, indomain_min)
       satisfy;
 
 %%%%%%%%%%%%%%%%%

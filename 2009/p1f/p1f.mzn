@@ -67,26 +67,26 @@ include "globals.mzn";
 %
 % The constraint is that z[i] must not be 1 until i = n and then
 % must be 1.
-predicate circuit(array[int] of var int: x) =
-  let { int: n = length(x),
-        array[1..n] of var 1..n: z}
-  in
-   all_different(x) /\
-   all_different(z) /\
-
-   % put the orbit of x[1] in in z[1..n]
-   % 
-   z[1] = x[1] /\ 
-   forall(i in 2..n) (
-      z[i] = x[z[i-1]]
-   )
-   /\ % may not be 1 for i < n
-   forall(i in 1..n-1) (
-      z[i] != 1
-   )
-   /\  % when i = n it must be 1
-   z[n] = 1
-;
+% predicate circuit(array[int] of var int: x) =
+%   let { int: n = length(x),
+%         array[1..n] of var 1..n: z}
+%   in
+%    all_different(x) /\
+%    all_different(z) /\
+% 
+%    % put the orbit of x[1] in in z[1..n]
+%    % 
+%    z[1] = x[1] /\ 
+%    forall(i in 2..n) (
+%       z[i] = x[z[i-1]]
+%    )
+%    /\ % may not be 1 for i < n
+%    forall(i in 1..n-1) (
+%       z[i] != 1
+%    )
+%    /\  % when i = n it must be 1
+%    z[n] = 1
+% ;
 %------------------------------------------------------------------------%
 
 
@@ -135,10 +135,10 @@ int: m = n-1;
 %------------------------------------------------------------------------%
 
 % Each row represents a matching
-array[1..m, 1..n] of var 1..n: p :: is_output;
+array[1..m, 1..n] of var 1..n: p :: output_var;
 
 % Objective for ordering of solutions
-var int: objective :: is_output;
+var int: objective :: output_var;
 
 
 %------------------------------------------------------------------------%

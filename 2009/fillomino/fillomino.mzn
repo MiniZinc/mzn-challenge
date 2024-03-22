@@ -14,7 +14,7 @@ array [row, col] of var id: area;
                                         % area[r, c] is the area owning (r, c).
 array [row, col] of var time: when;
                                         % when[r, c] is when (r, c) is fixed.
-array [row, col] of var 1..9: what :: is_output;
+array [row, col] of var 1..9: what :: output_var;
                                         % what[r, c] is the number at (r, c).
 
 array [row, col] of int: same_in_range =
@@ -110,18 +110,18 @@ constraint
 % Any solution will do.  Try labelling by area.
 solve
     :: int_search( [area[r, c] | r in row, c in col],
-            input_order, indomain_min, complete )
+            input_order, indomain_min)
 %     :: seq_search([
 %         int_search( [area[1, c] | c in col],
-%             input_order, indomain_min, complete ),
+%             input_order, indomain_min),
 %         int_search( [area[r, cols] | r in row],
-%             input_order, indomain_min, complete ),
+%             input_order, indomain_min),
 %         int_search( [area[rows, c] | c in col],
-%             input_order, indomain_min, complete ),
+%             input_order, indomain_min),
 %         int_search( [area[r, 1] | r in row],
-%             input_order, indomain_min, complete ),
+%             input_order, indomain_min),
 %         int_search( [area[r, c] | r in row, c in col],
-%             input_order, indomain_min, complete )
+%             input_order, indomain_min)
 %     ])
     satisfy;
 

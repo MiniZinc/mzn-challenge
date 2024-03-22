@@ -98,14 +98,16 @@ predicate ARK(array[0..n-2,0..3,0..BC-1] of var 0..1: DY, array[0..n-1,0..3,0..B
        XOR(DY[r-1,j,i], DK[r,j,i], DX[r,j,i])    
 )
 ;
-%Shiftrows
-predicate SR(array[0..n-1,0..3,0..BC-1] of var 0..1: DX,array[0..n-2,0..3,0..BC-1] of var 0..1: DSR) =
+% Shiftrows
+% predicate SR(array[0..n-1,0..3,0..BC-1] of var 0..1: DX,array[0..n-2,0..3,0..BC-1] of var 0..1: DSR) =
+predicate SR(array[int,int,int] of var 0..1: DX,array[int,int,int] of var 0..1: DSR) =
    forall(r in 0..n-1,j in 0..BC-1, i in 0..3) (
        DSR[r,j,i]=DX[r,((j+i) mod BC),i]
 );        
 
 % Mixcolumns
-predicate MC(array[0..n-1,0..BC-1] of var 0..4: CSRX,array[0..n-2,0..3,0..BC-1] of var 0..1: DY) =
+% predicate MC(array[0..n-1,0..BC-1] of var 0..4: CSRX,array[0..n-2,0..3,0..BC-1] of var 0..1: DY) =
+predicate MC(array[int,int] of var 0..4: CSRX,array[int,int,int] of var 0..1: DY) =
    forall(r in 0..n-2, j in 0..BC-1) (
           (CSRX[r,j] + sum(i in 0..3)(DY[r,j,i])) in {0,5,6,7,8} 
   ) 

@@ -75,7 +75,7 @@ predicate upper_bound_on_increments(var int: N_b, array[int] of var int: L) =
 solve :: int_search(
 		[Beamtime] ++ N ++
 		[Q[i,j,b] | i in Rows, j in Columns, b in BTimes ],
-		"input_order", "indomain_split", "complete")
+		input_order, indomain_split)
 	minimize (m*n + 1) * Beamtime + K;
 		% really: (Beamtime, K),  i.e. in lexicographic order
 

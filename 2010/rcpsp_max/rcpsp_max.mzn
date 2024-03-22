@@ -62,10 +62,10 @@ set of int: Times = 0..t_max;       % The set of point in times
 %-----------------------------------------------------------------------------%
 
     % The task start times
-array [Tasks] of var Times: s :: is_output;
+array [Tasks] of var Times: s :: output_var;
 
     % The project duration (makespan)
-var Times: objective :: is_output;
+var Times: objective :: output_var;
 
 %-----------------------------------------------------------------------------%
 % Constraints.

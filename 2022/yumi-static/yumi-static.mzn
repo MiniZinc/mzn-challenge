@@ -526,8 +526,8 @@ constraint implied_constraint(
 int: no_suction_cups;
 
 array[int,int] of int: suction_pick_tasks_orders;
-int: no_suction_picks = max(index_set_1of2(suction_pick_tasks_orders));
-int: suction_order_lengths = max(index_set_2of2(suction_pick_tasks_orders));
+int: no_suction_picks = if card(index_set_1of2(suction_pick_tasks_orders)) == 0 then 0 else max(index_set_1of2(suction_pick_tasks_orders)) endif;
+int: suction_order_lengths = if card(index_set_2of2(suction_pick_tasks_orders)) == 0 then 0 else max(index_set_2of2(suction_pick_tasks_orders)) endif;
 
 
 % -------------------------------------------------------

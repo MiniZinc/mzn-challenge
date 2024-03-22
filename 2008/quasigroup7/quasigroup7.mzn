@@ -33,7 +33,7 @@ set of int: nDomain = 0..n-1;
 
 array[nDomain, nDomain] of var nDomain: quasiGroup;
 
-solve :: int_search([quasiGroup[row, col] | row, col in nDomain], "first_fail", "indomain", "complete") satisfy;
+solve :: int_search([quasiGroup[row, col] | row, col in nDomain], first_fail, indomain) satisfy;
 
 constraint
      

@@ -18,13 +18,13 @@ array[Custs] of int: norders = [ sum(j in Prods)(orders[i,j]) | i in Custs ];
 
 %-- Decision variables --------------------------------------------------------
 
-array[Prods] of var Prods: s :: is_output; % schedule of products
+array[Prods] of var Prods: s :: output_var; % schedule of products
 
 %-- Auxilliary variables ------------------------------------------------------
 
 array[Custs,0..p] of var int: o ; % orders filled after time t
-%% array[Prods] of var int: open :: is_output; 
-var int: objective :: is_output ;
+%% array[Prods] of var int: open :: output_var; 
+var int: objective :: output_var ;
 
 %-- Constraints ---------------------------------------------------------------
 
@@ -50,6 +50,6 @@ constraint objective = max(j in Prods)(
 %-- Solving objective and solution output -------------------------------------
 
 solve ::
-      int_search(s, input_order, indomain_min, complete)
+      int_search(s, input_order, indomain_min)
       minimize objective;
 

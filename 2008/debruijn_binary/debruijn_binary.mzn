@@ -35,7 +35,7 @@ array[0..base-1] of var int: gcc;                        % number of occurrences
 % some solve variants:
 %
 % solve satisfy;
-solve :: int_search(x, "first_fail", "indomain_split", "complete") satisfy;
+solve :: int_search(x, first_fail, indomain_split) satisfy;
 
 % This was used with the eclipse solver for a fast solution (65 solutions in 5 seconds) for
 % the following problem.
@@ -99,7 +99,7 @@ constraint
       bin_code[i] = binary[i,1]
     ) 
     /\ % number of occurences in bin_code 
-    global_cardinality(bin_code, gcc)
+    global_cardinality(bin_code, array1d(0..base-1, [i | i in 0..base-1]), gcc)
 
    /\  % when m mod base = 0 ->
        %    it should be exactly equal number of occurrences

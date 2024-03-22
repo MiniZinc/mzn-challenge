@@ -58,24 +58,24 @@ predicate ghoulomb(array[int] of var int: mark,
 %%%%%%%%% Model
 
 %  Golomb ruler 1
-array[1..m1] of var 0..m1*m1: mark1 :: is_output;
+array[1..m1] of var 0..m1*m1: mark1 :: output_var;
 array[1..(m1*(m1-1)) div 2] of var 0..m1*m1: differences1 =
             [ mark1[j]-mark1[i] | i in 1..m1, j in i+1..m1 ];
 constraint ghoulomb(mark1, differences1);
 
 %  Golomb ruler 2
-array[1..m2] of var 0..m2*m2: mark2 :: is_output;
+array[1..m2] of var 0..m2*m2: mark2 :: output_var;
 array[1..(m2*(m2-1)) div 2] of var 0..m2*m2: differences2 =
             [ mark2[j]-mark2[i] | i in 1..m2, j in i+1..m2 ];
 constraint ghoulomb(mark2, differences2);
 
 %  Golomb ruler 3
-array[1..m3] of var 0..m3*m3: mark3 :: is_output;
+array[1..m3] of var 0..m3*m3: mark3 :: output_var;
 array[1..(m3*(m3-1)) div 2] of var 0..m3*m3: differences3 =
             [ mark3[j]-mark3[i] | i in 1..m3, j in i+1..m3 ];
 constraint ghoulomb(mark3, differences3);
 
-var int: objective :: is_output = mark2[m2];
+var int: objective :: output_var = mark2[m2];
 
 solve :: int_search(mark1 ++ mark2 ++ mark3, input_order, indomain, complete)
     minimize objective;

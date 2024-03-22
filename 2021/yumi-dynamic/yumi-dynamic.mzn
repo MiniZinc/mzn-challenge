@@ -527,8 +527,16 @@ constraint implied_constraint(
 int: no_suction_cups;
 
 array[int,int] of int: suction_pick_tasks_orders;
-int: no_suction_picks = max(index_set_1of2(suction_pick_tasks_orders));
-int: suction_order_lengths = max(index_set_2of2(suction_pick_tasks_orders));
+int: no_suction_picks = if card(index_set_1of2(suction_pick_tasks_orders)) == 0 then
+    0
+  else
+    max(index_set_1of2(suction_pick_tasks_orders))
+  endif;
+int: suction_order_lengths = if card(index_set_2of2(suction_pick_tasks_orders)) == 0 then
+    0
+  else
+    max(index_set_2of2(suction_pick_tasks_orders))
+  endif;
 
 
 % -------------------------------------------------------
@@ -802,10 +810,10 @@ bool: using_cumulative_per_zone = true;
 bool: using_diffn_per_zone = false;
 bool: using_unified_diffn = false;
 
-int: max_lwait = max( [ max(e) | e in wait_zones_left_data]  );
-int: max_rwait = max( [ max(e) | e in wait_zones_right_data] );
-int: max_lwork = max( [ max(e) | e in work_zones_left_data]  );
-int: max_rwork = max( [ max(e) | e in work_zones_right_data] );
+int: max_lwait = max( [0] ++ [ if card(e) == 0 then 0 else max(e) endif | e in wait_zones_left_data]  );
+int: max_rwait = max( [0] ++ [ if card(e) == 0 then 0 else max(e) endif | e in wait_zones_right_data] );
+int: max_lwork = max( [0] ++ [ if card(e) == 0 then 0 else max(e) endif | e in work_zones_left_data]  );
+int: max_rwork = max( [0] ++ [ if card(e) == 0 then 0 else max(e) endif | e in work_zones_right_data] );
 
 
 int: max_zones = max([max_lwait, max_rwait, max_lwork, max_rwork]);
