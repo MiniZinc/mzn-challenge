@@ -19,8 +19,8 @@
 The following table shows the version of the MiniZinc compiler used to compile the MiniZinc instances for each iteration of the MiniZinc Challenge.
 
 | Year | MiniZinc version |
-|------|------------------|
-| 2022 | 2.7.6            |
+| ---- | ---------------- |
+| 2023 | 2.7.6            |
 | 2022 | 2.6.3            |
 | 2021 | 2.5.5            |
 | 2020 | 2.4.3            |
@@ -40,7 +40,7 @@ The following table shows the version of the MiniZinc compiler used to compile t
 ### Licensing
 
 A `LICENSE` files is provided in each specific problem directory when the license is known.
-Problems submitted to recent iterations of the challenge are required to be available under an *MIT license*.
+Problems submitted to recent iterations of the challenge are required to be available under an _MIT license_.
 However, this was not the case for earlier iterations.
 As such, other models might be available under a different license or no license might be available.
 We welcome authors to contact us to update any licensing details.
