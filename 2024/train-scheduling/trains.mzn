@@ -44,7 +44,7 @@ constraint forall(s in STOP)(assert(travel_time[s,dstop] = 0 /\ travel_time[dsto
 constraint assert(min_sep >= 0, "min_sep is negative\n");
 constraint forall(s in SERVICE)(assert(service_end[s] >= service_start[s], "service \(s) start end time problem\n"));
 constraint forall(s1, s2 in STOP where s1 <= s2)(assert(line[s1,s2] = line[s2,s1] , 
-                                                 "Non symmetric line \(s1,s2)\n"));
+                                                 "Non symmetric line \(s1),\(s2)\n"));
 %%%% line type agrees with travel time
 constraint forall(st1, st2 in STOP)(assert((absent(travel_time[st1,st2]) \/ travel_time[st1,st2] = 0)
                                            <->line[st1,st2] = NONE, 
