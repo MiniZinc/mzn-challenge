@@ -20,6 +20,7 @@ The following table shows the version of the MiniZinc compiler used to compile t
 
 | Year | MiniZinc version |
 | ---- | ---------------- |
+| 2025 | 2.9.3            |
 | 2024 | 2.8.5            |
 | 2023 | 2.7.6            |
 | 2022 | 2.6.3            |
