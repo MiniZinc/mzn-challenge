@@ -30,7 +30,7 @@ int: depot = 1; % The first location is the depot
 array[Locations] of var Locations: pred;
 % durToPred[l] = the distance from location pred[l] to location l:
 array[Locations] of var 0..max(duration): durToPred = [
-    duration[l, pred[l]] | l in Locations];
+    duration[pred[l], l] | l in Locations];
 % arrival[l] = the arrival at location l:
 array[Locations] of var 0..max(late): arrival;
 % departure[l] = the departure at location l:
